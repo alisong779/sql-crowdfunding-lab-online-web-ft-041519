@@ -1,0 +1,1 @@
+INSERT INTO groceries VALUES (1, "Apples", 2, 1);
