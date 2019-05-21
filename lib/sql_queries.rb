@@ -34,7 +34,12 @@ HAVING SUM (pledges.amount) >= projects.funding_goal;"
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_amount_and_users_name
-"Write your SQL query Here"
+"SELECT users.name, SUM (pledges.amount )
+  FROM users
+  INNER JOIN pledges
+  ON users.id = pledges.user_id
+  GROUP BY users.name
+  ORDER BY pledges.amount, users.name;"
 end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
